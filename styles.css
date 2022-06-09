@@ -1,0 +1,139 @@
+main {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+h1  {
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 6vh;
+  color: #ff5722;
+  margin: 2vh;
+}
+
+h2 {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #ff5722;
+  font-size: 3vh;
+}
+
+h3  {
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 5vh;
+  color: white;
+  margin: 1vh 0;
+}
+
+p {
+  font-family: 'Nunito Sans', sans-serif;
+  color: white;
+  font-size: 3vh;
+}
+
+.left-side {
+  width: 20%;
+  height: 100%;
+  background-color: #452bd6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.human-icon {
+  height: 5vh;
+  margin-top: 15vh;
+}
+
+.change-game {
+  margin-top: 40vh;
+}
+
+.center {
+  background-color: #fffbff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.center-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.classic-image, .difficult-image {
+  height: 30vh;
+}
+
+.right-side {
+  width: 20%;
+  background-color: #f330d6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.computer-icon {
+  height: 5vh;
+  margin-top: 15vh;
+  filter: invert(100%)
+}
+
+.computer-icon.overlay {
+  color: white;
+}
+
+button {
+  margin-top: 3vh;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 2.2vh;
+  border-color: #ff5722;
+  border-radius: 5px;
+  color: #ff5722;
+  background-color: #fffbff;
+  padding: 1vh 4vh;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  background-color: #ff5722;
+}
+
+.paper-icon, .scissors-icon {
+  margin: 5vh 3vw 0vh 3vw;
+  height: 35vh;
+}
+.rock-icon {
+  height: 30vh;
+  margin: 5vh 3vw 0vh 3vw;
+}
+
+.heart-icon {
+  height: 30vh;
+  margin: 2vh 10vw 0vh 10vw
+}
+
+.star-icon {
+  height: 35vh;
+  margin: 0vh 10vw 0vh 0vw
+}
+
+.paper-icon:hover, .scissors-icon:hover, .rock-icon:hover, .heart-icon:hover, .star-icon:hover {
+  opacity: 75%;
+  cursor: pointer;
+}
+
+.player-icons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
