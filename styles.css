@@ -105,26 +105,27 @@ button:hover {
   background-color: #ff5722;
 }
 
-.paper-icon, .scissors-icon {
-  margin: 5vh 3vw 0vh 3vw;
-  height: 35vh;
-}
-.rock-icon {
-  height: 30vh;
-  margin: 5vh 3vw 0vh 3vw;
+#paper, #scissors {
+  margin: 5vh 1vw 0vh 1vw;
+  height: 17vh;
 }
 
-.heart-icon {
-  height: 30vh;
-  margin: 2vh 10vw 0vh 10vw
+#rock {
+  height: 14vh;
+  margin: 5vh 1vw 0vh 1vw;
 }
 
-.star-icon {
-  height: 35vh;
-  margin: 0vh 10vw 0vh 0vw
+#heart {
+  height: 15vh;
+  margin: 2vh 2vw 0vh 0vw
 }
 
-.paper-icon:hover, .scissors-icon:hover, .rock-icon:hover, .heart-icon:hover, .star-icon:hover {
+#star {
+  height: 17vh;
+  margin: 0vh 2vw 0vh 0vw
+}
+
+#paper:hover, #scissors:hover, #rock:hover, #heart:hover, #star:hover {
   opacity: 75%;
   cursor: pointer;
 }
@@ -135,6 +136,7 @@ button:hover {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top: 20vh;
 }
 
 .hidden {

@@ -1,5 +1,3 @@
-// currentGame = new Game();
-
 var centerChooseYourGame = document.querySelector(".center-choose-your-game");
 var centerClassicChooseYourPlayer = document.querySelector(".center-classic-choose-your-player");
 var centerDiffifultChooseYourPlayer = document.querySelector(".center-difficult-choose-your-player");
@@ -14,13 +12,30 @@ var scissors = document.querySelector(".scissors-icon")
 var heart = document.querySelector(".heart-icon")
 var star = document.querySelector(".star-icon")
 
-var human = new Player("human", "https://www.pngkey.com/png/full/75-750996_stick-figure-transparent-background-male-icon-white-png.png")
-var computer = new Player("computer", "http://assets.stickpng.com/images/588a6ad0d06f6719692a2d29.png")
+var currentGame = new Game("human", "computer");
 
+//on click of any icon you set current selection to paper, move to next turn. currentGame.humanPlayer.currentSelection
+//make wrapper function for rest of steps. invoke wrapper function after humans current selection is set
+//run method to have computer select random
+//run method to determine establishWinner
+//display whatever is needed on dom
+//reset
+//always going to be humans turn then computers
+
+//event listeners for all icons, wrapper function invoked when clicked.
+
+//EVENT LISTENERS
 
 classicGameButton.addEventListener('click', chooseClassicGame);
 difficultGameButton.addEventListener('click', chooseDifficultGame);
 changeGameButton.addEventListener('click', clickChangeGame);
+rock.addEventListener('click', selectRock)
+// paper.addEventListener('click', playGame)
+// scissors.addEventListener('click', playGame)
+// heart.addEventListener('click', playGame)
+// star.addEventListener('click', playGame)
+
+//FUNCTIONS
 
 function show(element) {
   element.classList.remove('hidden');
@@ -38,7 +53,9 @@ function chooseClassicGame() {
 function chooseDifficultGame() {
   hide(centerChooseYourGame);
   hide(centerClassicChooseYourPlayer);
+  show(changeGameButton)
   show(centerDiffifultChooseYourPlayer);
+  currentGame.classic = false;
 }
 
 function clickChangeGame() {
@@ -47,14 +64,10 @@ function clickChangeGame() {
   hide(centerDiffifultChooseYourPlayer);
 }
 
-function classicComputerSelection() {
-  var classicIndex = Math.floor(Math.random() * this.classicPlayers.length);
-  var classicSelection = this.classicPlayers[classicIndex];
-  return classicSelection;
-}
-
-function playClassic() {
-   if (human === "rock") {
-
-   }
+function selectRock() {
+  currentGame.humanPlayer.currentSelection = "rock"
+  currentGame.establishFighter()
+  currentGame.computerPlayer.takeTurn(currentGame)
+  currentGame.establishWinner()
+  console.log(currentGame)
 }

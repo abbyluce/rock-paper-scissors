@@ -3,15 +3,23 @@ class Player {
     this.name = name
     this.token = token
     this.wins = 0
+    this.currentSelection
   }
 
-  takeTurn() {
+  takeTurn(currentGame) {
     if (this.name === "computer") {
-      computerSelection = currentGame.icons[Math.floor(Math.random() *
-        currentGame.icons.length)];
+      this.currentSelection = currentGame.fighters[Math.floor(Math.random() *
+        currentGame.fighters.length)];
     } else {
-      
+      this.currentSelection = event.target.id;
     }
+  }
+
+    addWin() {
+      // update inner text
+      return `${this.token} This game was won by the ${this.name}! ${this.token}`
+    }
+    itsADraw() {
     }
   }
 
@@ -23,8 +31,3 @@ class Player {
 //classic or difficult
 //write out all rules within conditionals
 //
-
-
-difficultComputerSelection() {
-
-}
