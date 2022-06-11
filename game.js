@@ -1,6 +1,24 @@
 class Game {
-
+  constructor(human, computer) {
+    this.humanPlayer = human
+    this.computerPlayer = computer
+    this.icons = []
+    this.classic = true
+  }
+  playGame() {
+    if (this.classic) {
+    this.icons.push("rock", "paper", "scissors")
+  } else {
+    this.icons.push("rock", "paper", "scissors", "heart", "star")
+  }
+    }
+    countWins() {
+      
+    }
 }
+
+
+
 
 //two player instances
 // A way to check the Game’s board data for win conditions
