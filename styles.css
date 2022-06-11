@@ -106,22 +106,22 @@ button:hover {
 }
 
 .paper-icon, .scissors-icon {
-  margin: 5vh 3vw 0vh 3vw;
-  height: 35vh;
+  margin: 5vh 1vw 0vh 1vw;
+  height: 17vh;
 }
 .rock-icon {
-  height: 30vh;
-  margin: 5vh 3vw 0vh 3vw;
+  height: 14vh;
+  margin: 5vh 1vw 0vh 1vw;
 }
 
 .heart-icon {
-  height: 30vh;
-  margin: 2vh 10vw 0vh 10vw
+  height: 15vh;
+  margin: 2vh 2vw 0vh 0vw
 }
 
 .star-icon {
-  height: 35vh;
-  margin: 0vh 10vw 0vh 0vw
+  height: 17vh;
+  margin: 0vh 2vw 0vh 0vw
 }
 
 .paper-icon:hover, .scissors-icon:hover, .rock-icon:hover, .heart-icon:hover, .star-icon:hover {
@@ -135,6 +135,7 @@ button:hover {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top: 20vh;
 }
 
 .hidden {
