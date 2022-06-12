@@ -9,6 +9,7 @@ h1  {
   font-size: 6vh;
   color: #ff5722;
   margin: 2vh;
+  text-align: center;
 }
 
 h2 {
@@ -43,11 +44,22 @@ p {
 
 .human-icon {
   height: 5vh;
-  margin-top: 15vh;
+  margin-top: 10vh;
+}
+
+.human-icon-center {
+  height: 5vh;
+  margin-top: 5vh;
+  filter: invert(50%)
 }
 
 .change-game {
   margin-top: 40vh;
+}
+
+.main-body {
+  display: flex;
+  flex-direction: column;
 }
 
 .center {
@@ -58,7 +70,7 @@ p {
   height: 100%;
 }
 
-.center-content {
+.center-choose-your-game {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -80,12 +92,14 @@ p {
 
 .computer-icon {
   height: 5vh;
-  margin-top: 15vh;
+  margin-top: 10vh;
   filter: invert(100%)
 }
 
-.computer-icon.overlay {
-  color: white;
+.computer-icon-center {
+  height: 5vh;
+  margin-top: 5vh;
+  filter: invert(50%)
 }
 
 button {

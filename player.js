@@ -1,27 +1,24 @@
 class Player {
   constructor(name, token) {
-    this.name = name
-    this.token = token
-    this.wins = 0
-    this.currentSelection
+    this.name = name;
+    this.token = token;
+    this.wins = 0;
+    this.winner = null;
+    this.currentSelection;
   }
 
-  takeTurn(currentGame) {
+  computerTurn(currentGame) {
     if (this.name === "computer") {
       this.currentSelection = currentGame.fighters[Math.floor(Math.random() *
         currentGame.fighters.length)];
-    } else {
-      this.currentSelection = event.target.id;
-    }
+      }
   }
 
-    addWin() {
-      // update inner text
-      return `${this.token} This game was won by the ${this.name}! ${this.token}`
-    }
-    itsADraw() {
-    }
+  humanTurn(event) {
+      this.currentSelection = event.target.id;
   }
+}
+
 
 
 
