@@ -7,14 +7,15 @@ class Game {
   }
   establishFighter() {
     if (this.classic) {
-    this.fighters.push("rock", "paper", "scissors")
+    this.fighters = ["rock", "paper", "scissors"]
   } else {
-    this.fighters.push("rock", "paper", "scissors", "heart", "star")
+    this.fighters = ["rock", "paper", "scissors", "heart", "star"]
   }
   }
   establishWinner() {
       if (this.humanPlayer.currentSelection === this.computerPlayer.currentSelection) {
-        this.humanPlayer.itsADraw()
+        this.humanPlayer.winner = false
+        this.computerPlayer.winner = false
       } else if
         ((this.humanPlayer.currentSelection === "rock" &&
         (this.computerPlayer.currentSelection === "scissors"
@@ -31,8 +32,12 @@ class Game {
         (this.computerPlayer.currentSelection === "rock" ||
         this.computerPlayer.currentSelection === "scissors"))) {
         this.humanPlayer.wins++
+        this.computerPlayer.winner = false
+        this.humanPlayer.winner = true
       } else {
         this.computerPlayer.wins++
+        this.humanPlayer.winner = false
+        this.computerPlayer.winner = true
       }
   }
 }

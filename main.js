@@ -6,11 +6,12 @@ var changeGameButton = document.querySelector(".change-game");
 var classicGameButton = document.querySelector(".classic-game-button");
 var difficultGameButton = document.querySelector(".difficult-game-button");
 
-var rock = document.querySelector(".rock-icon")
-var paper = document.querySelector(".paper-icon")
-var scissors = document.querySelector(".scissors-icon")
-var heart = document.querySelector(".heart-icon")
-var star = document.querySelector(".star-icon")
+var classicFighters = document.querySelector(".player-icons");
+var difficultFighters = document.querySelector(".player-icons-difficult");
+
+var computerWinCount = document.querySelector(".computer-win-count");
+var humanWinCount = document.querySelector(".human-win-count");
+var chooseSubheader = document.querySelector("h2");
 
 var currentGame = new Game("human", "computer");
 
@@ -29,17 +30,15 @@ var currentGame = new Game("human", "computer");
 classicGameButton.addEventListener('click', chooseClassicGame);
 difficultGameButton.addEventListener('click', chooseDifficultGame);
 changeGameButton.addEventListener('click', clickChangeGame);
-rock.addEventListener('click', selectRock)
-// paper.addEventListener('click', playGame)
-// scissors.addEventListener('click', playGame)
-// heart.addEventListener('click', playGame)
-// star.addEventListener('click', playGame)
+classicFighters.addEventListener('click', initializeGame)
+difficultFighters.addEventListener('click', initializeGame)
 
 //FUNCTIONS
 
 function show(element) {
   element.classList.remove('hidden');
 }
+
 function hide(element) {
   element.classList.add('hidden');
 }
@@ -48,6 +47,7 @@ function chooseClassicGame() {
   show(centerClassicChooseYourPlayer);
   show(changeGameButton);
   hide(centerChooseYourGame);
+  chooseSubheader.innerText = `CHOOSE YOUR PLAY!`
 }
 
 function chooseDifficultGame() {
@@ -55,6 +55,7 @@ function chooseDifficultGame() {
   hide(centerClassicChooseYourPlayer);
   show(changeGameButton)
   show(centerDiffifultChooseYourPlayer);
+  chooseSubheader.innerText = `CHOOSE YOUR PLAY!`
   currentGame.classic = false;
 }
 
@@ -64,10 +65,33 @@ function clickChangeGame() {
   hide(centerDiffifultChooseYourPlayer);
 }
 
-function selectRock() {
-  currentGame.humanPlayer.currentSelection = "rock"
-  currentGame.establishFighter()
-  currentGame.computerPlayer.takeTurn(currentGame)
-  currentGame.establishWinner()
+function updateScores() {
+  computerWinCount.innerHTML = `WINS: ${currentGame.computerPlayer.wins}`
+  humanWinCount.innerHTML = `WINS: ${currentGame.humanPlayer.wins}`
+  if (currentGame.humanPlayer.winner = true) {
+  chooseSubheader.innerHTML = `<img src=${currentGame.humanPlayer.token} class="human-icon-center"> You won this game! <img src=${currentGame.humanPlayer.token} class="human-icon-center">`
+  } else if (currentGame.computerPlayer.winner = true) {
+  chooseSubheader.innerHTML = `<img src=${currentGame.computerPlayer.token} class="computer-icon-center"> This game was won by the computer! <img src=${currentGame.computerPlayer.token} class="computer-icon-center">`
+  }
+}
+
+function initializeGame() {
+  currentGame.establishFighter();
+  currentGame.humanPlayer.humanTurn(event);
+  currentGame.computerPlayer.computerTurn(currentGame);
+  setTimeout(displaySelections, 3000)
+  displaySelections(event);
+  currentGame.establishWinner();
+  updateScores();
   console.log(currentGame)
+}
+
+function displaySelections(event) {
+  if (currentGame.classic) {
+    classicFighters.innerHTML = `<img src="images/${currentGame.humanPlayer.currentSelection}.png" id="${currentGame.humanPlayer.currentSelection}">
+    <img src="images/${currentGame.computerPlayer.currentSelection}.png" id="${currentGame.humanPlayer.currentSelection}">`
+  } else if (!currentGame.classic) {
+    difficultFighters.innerHTML = `<img src="images/${currentGame.humanPlayer.currentSelection}.png" id="${currentGame.humanPlayer.currentSelection}">
+    <img src="images/${currentGame.computerPlayer.currentSelection}.png" id="${currentGame.humanPlayer.currentSelection}">`
+  }
 }
