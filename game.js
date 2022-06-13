@@ -4,6 +4,7 @@ class Game {
     this.computerPlayer = new Player(computer, "http://assets.stickpng.com/images/588a6ad0d06f6719692a2d29.png")
     this.fighters = []
     this.classic = true
+    this.winner;
   }
   establishFighter() {
     if (this.classic) {
@@ -14,8 +15,7 @@ class Game {
   }
   establishWinner() {
       if (this.humanPlayer.currentSelection === this.computerPlayer.currentSelection) {
-        this.humanPlayer.winner = false
-        this.computerPlayer.winner = false
+        this.winner = "tie";
       } else if
         ((this.humanPlayer.currentSelection === "rock" &&
         (this.computerPlayer.currentSelection === "scissors"
@@ -31,14 +31,18 @@ class Game {
         (this.humanPlayer.currentSelection === "star" &&
         (this.computerPlayer.currentSelection === "rock" ||
         this.computerPlayer.currentSelection === "scissors"))) {
-        this.humanPlayer.wins++
-        this.computerPlayer.winner = false
-        this.humanPlayer.winner = true
+        this.winner = "human"
       } else {
-        this.computerPlayer.wins++
-        this.humanPlayer.winner = false
-        this.computerPlayer.winner = true
+        this.winner = "computer"
       }
+  }
+
+  addPoints() {
+    if (this.winner === "human") {
+      this.humanPlayer.wins++
+    } else if (this.winner === "computer") {
+      this.computerPlayer.wins++
+    }
   }
 }
 

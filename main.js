@@ -65,13 +65,11 @@ function clickChangeGame() {
   hide(centerDiffifultChooseYourPlayer);
 }
 
-function updateScores() {
-  computerWinCount.innerHTML = `WINS: ${currentGame.computerPlayer.wins}`
-  humanWinCount.innerHTML = `WINS: ${currentGame.humanPlayer.wins}`
-  if (currentGame.humanPlayer.winner = true) {
-  chooseSubheader.innerHTML = `<img src=${currentGame.humanPlayer.token} class="human-icon-center"> You won this game! <img src=${currentGame.humanPlayer.token} class="human-icon-center">`
-  } else if (currentGame.computerPlayer.winner = true) {
-  chooseSubheader.innerHTML = `<img src=${currentGame.computerPlayer.token} class="computer-icon-center"> This game was won by the computer! <img src=${currentGame.computerPlayer.token} class="computer-icon-center">`
+function clearGame() {
+  if (currentGame.classic) {
+    chooseClassicGame()
+  } else {
+    chooseDifficultGame()
   }
 }
 
@@ -79,14 +77,15 @@ function initializeGame() {
   currentGame.establishFighter();
   currentGame.humanPlayer.humanTurn(event);
   currentGame.computerPlayer.computerTurn(currentGame);
-  setTimeout(displaySelections, 3000)
-  displaySelections(event);
+  displaySelections()
   currentGame.establishWinner();
-  updateScores();
+  currentGame.addPoints();
+  updateResults();
+  setTimeout(clearGame, 2000);
   console.log(currentGame)
 }
 
-function displaySelections(event) {
+function displaySelections() {
   if (currentGame.classic) {
     classicFighters.innerHTML = `<img src="images/${currentGame.humanPlayer.currentSelection}.png" id="${currentGame.humanPlayer.currentSelection}">
     <img src="images/${currentGame.computerPlayer.currentSelection}.png" id="${currentGame.humanPlayer.currentSelection}">`
@@ -94,4 +93,16 @@ function displaySelections(event) {
     difficultFighters.innerHTML = `<img src="images/${currentGame.humanPlayer.currentSelection}.png" id="${currentGame.humanPlayer.currentSelection}">
     <img src="images/${currentGame.computerPlayer.currentSelection}.png" id="${currentGame.humanPlayer.currentSelection}">`
   }
+}
+
+function updateResults() {
+  computerWinCount.innerHTML = `WINS: ${currentGame.computerPlayer.wins}`
+  humanWinCount.innerHTML = `WINS: ${currentGame.humanPlayer.wins}`
+  if (currentGame.winner === 'human') {
+  chooseSubheader.innerHTML = `<img src=${currentGame.humanPlayer.token} class="human-icon-center"> You won this game! <img src=${currentGame.humanPlayer.token} class="human-icon-center">`
+} else if (currentGame.winner === 'computer') {
+  chooseSubheader.innerHTML = `<img src=${currentGame.computerPlayer.token} class="computer-icon-center"> This game was won by the computer! <img src=${currentGame.computerPlayer.token} class="computer-icon-center">`
+} else if (currentGame.winner === 'tie') {
+  chooseSubheader.innerHTML = `It's a tie!`
+}
 }
