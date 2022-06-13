@@ -17,13 +17,3 @@ class Player {
       this.currentSelection = event.target.id;
   }
 }
-
-
-
-
-
-// computer player to have randomizer.
-//takeTurn telling computer to choose a fighter, conditional for if the game is
-//classic or difficult
-//write out all rules within conditionals
-//

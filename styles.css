@@ -12,7 +12,7 @@ h1  {
   text-align: center;
 }
 
-h2 {
+h2, p {
   font-family: 'Nunito Sans', sans-serif;
   color: #ff5722;
   font-size: 3vh;
@@ -49,17 +49,11 @@ p {
 
 .human-icon-center {
   height: 5vh;
-  margin-top: 5vh;
   filter: invert(30%)
 }
 
 .change-game {
   margin-top: 40vh;
-}
-
-.main-body {
-  display: flex;
-  flex-direction: column;
 }
 
 .center {
@@ -76,7 +70,8 @@ p {
   flex-direction: column;
 }
 
-.classic-image, .difficult-image {
+.classic-image,
+.difficult-image {
   height: 30vh;
 }
 
@@ -98,7 +93,6 @@ p {
 
 .computer-icon-center {
   height: 5vh;
-  margin-top: 5vh;
   filter: invert(70%)
 }
 
@@ -117,34 +111,41 @@ button {
 button:hover {
   color: white;
   background-color: #ff5722;
+  transform: scale(1.1);
 }
 
-#paper, #scissors {
+#paper,
+#scissors {
   margin: 5vh 1vw 0vh 1vw;
   height: 17vh;
 }
 
 #rock {
   height: 14vh;
-  margin: 5vh 1vw 0vh 1vw;
+  margin: 6vh 1vw 0vh 0vw;
 }
 
 #heart {
   height: 15vh;
-  margin: 2vh 2vw 0vh 0vw
+  margin: 3vh 2vw 0vh 0vw
 }
 
 #star {
   height: 17vh;
-  margin: 0vh 2vw 0vh 0vw
+  margin: 1vh 2vw 0vh 0vw
 }
 
-#paper:hover, #scissors:hover, #rock:hover, #heart:hover, #star:hover {
-  opacity: 75%;
+#paper:hover,
+#scissors:hover,
+#rock:hover,
+#heart:hover,
+#star:hover {
+  transform: scale(1.2);
   cursor: pointer;
 }
 
-.player-icons {
+.player-icons,
+.player-icons-difficult {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
