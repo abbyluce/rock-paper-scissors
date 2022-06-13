@@ -50,7 +50,7 @@ p {
 .human-icon-center {
   height: 5vh;
   margin-top: 5vh;
-  filter: invert(50%)
+  filter: invert(30%)
 }
 
 .change-game {
@@ -99,7 +99,7 @@ p {
 .computer-icon-center {
   height: 5vh;
   margin-top: 5vh;
-  filter: invert(50%)
+  filter: invert(70%)
 }
 
 button {
