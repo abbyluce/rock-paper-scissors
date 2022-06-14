@@ -7,7 +7,7 @@
   - CSS
 
 ## Illustrations
-    ![Screen Shot 2022-06-14 at 11 20 18 AM](https://user-images.githubusercontent.com/100726140/173638625-43b3cbde-3209-403a-9036-874f978880e5.png)
+![Screen Shot 2022-06-14 at 11 20 18 AM](https://user-images.githubusercontent.com/100726140/173638625-43b3cbde-3209-403a-9036-874f978880e5.png)
 
 ## Features
 - A home page shows on page load with the option for either the Classic or Difficult version of the game. It includes directions for each version, and allows users to click a button to take them to the game board of their choosing.
