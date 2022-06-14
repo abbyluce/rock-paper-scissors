@@ -30,7 +30,6 @@ function chooseClassicGame() {
   show(changeGameButton);
   hide(centerChooseYourGame);
   clearGame();
-  // chooseSubheader.innerText = `CHOOSE YOUR PLAY!`;
 }
 
 function chooseDifficultGame() {
@@ -40,8 +39,6 @@ function chooseDifficultGame() {
   show(changeGameButton);
   show(centerDiffifultChooseYourPlayer);
   clearGame();
-  // chooseSubheader.innerText = `CHOOSE YOUR PLAY!`;
-
 }
 
 function clickChangeGame() {
